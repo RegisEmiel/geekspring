@@ -1,0 +1,25 @@
+use geek_db;
+
+CREATE TABLE categories(id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255));
+
+TRUNCATE categories;
+
+INSERT INTO categories(name)
+VALUES 	('Category_1'),
+		('Category_2');
+
+
+CREATE TABLE products(id integer AUTO_INCREMENT PRIMARY KEY, category_id integer, title varchar(255), price int, foreign key (category_id) references categories (id));
+
+TRUNCATE products;
+
+VALUES	(1, 'Product_1', 100),
+		(1, 'Product_2', 120),
+        (2, 'Product_3', 190),
+        (2, 'Product_4', 180),
+        (1, 'Product_5', 110),
+		(1, 'Product_6', 130),
+        (2, 'Product_7', 170),
+        (2, 'Product_8', 150);
+
+select id, category_id, title, price from products;

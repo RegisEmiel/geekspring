@@ -26,7 +26,7 @@ public class StudentsController {
         this.studentsService = studentsService;
     }
 
-    @RequestMapping("/list")
+    //@RequestMapping("/list")
     public String showStudentsList(Model model) {
         List<Student> allStudents = studentsService.getAllStudentsList();
         model.addAttribute("studentsList", allStudents);
