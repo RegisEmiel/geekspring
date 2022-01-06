@@ -1,4 +1,6 @@
-use geek_db;
+CREATE SCHEMA `geek_db`;
+
+USE geek_db;
 
 CREATE TABLE categories(id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255));
 
@@ -13,6 +15,7 @@ CREATE TABLE products(id integer AUTO_INCREMENT PRIMARY KEY, category_id integer
 
 TRUNCATE products;
 
+INSERT INTO products(category_id, title, price)
 VALUES	(1, 'Product_1', 100),
 		(1, 'Product_2', 120),
         (2, 'Product_3', 190),

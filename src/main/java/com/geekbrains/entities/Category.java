@@ -8,15 +8,15 @@ import java.util.List;
 @Table(name = "categories")
 public class Category {
     @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
     String name;
 
-    @OneToMany(mappedBy = "category")
-    List<Product> products = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
+//    List<Product> products = new ArrayList<>();
 
     public Category() {
     }
@@ -41,17 +41,17 @@ public class Category {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public void addProduct(Product product) {
-        this.products.add(product);
-    }
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
+//
+//    public void addProduct(Product product) {
+//        this.products.add(product);
+//    }
 
     @Override
     public String toString() {
